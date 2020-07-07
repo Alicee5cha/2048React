@@ -1,7 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
+import './main.css';
+import Icon from './icon.jpg';
+import printMe from './print.js';
 
-const myfirstelement = <h1>Hello React! index.js stuff</h1>
+function component() {
+    const element = document.createElement('div');
+  
+    const btn = document.createElement('button');
 
-ReactDOM.render(myfirstelement, document.getElementById('main'));
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = printMe;
+    element.appendChild(btn);
+
+    return element;
+  }
+  
+  document.body.appendChild(component());
